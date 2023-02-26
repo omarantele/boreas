@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FoliosController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::controller(FoliosController::class)->group(function(){
+    Route::get('folios', 'index');
+    Route::get('folios', 'create');
+    Route::get('folios', 'show');
+});
+
+
+
+
+
+
+
